@@ -1,0 +1,16 @@
+<aura:component controller="OpportunityBoardController" implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+  <aura:attribute name="opportunies" type="Opportunity[]" />
+  <ltng:require styles="/resource/SLDS104/assets/styles/salesforce-lightning-design-system.css" />
+  <aura:handler name="init" action="{!c.init}" value="{!this}" />
+
+  <div class="opportunity-board-box-component slds">
+    <ul>
+      <aura:iteration items="{!v.opportunies}" var="opportunity">
+        <li class="slds-m-bottom--small slds-m-horizontal--small">
+          <c:OpportunityBoardItem opportunity="{!opportunity}" />
+        </li>
+      </aura:iteration>
+    </ul>
+  </div>
+</aura:component>
